@@ -1,8 +1,10 @@
 import { Search } from "lucide-react";
-import { DropdownButton } from "../../components/dropdowNbutton";
+import { DropdownButton } from "../../components/dropdownbutton";
 
 export function SearchOptions() {
     const educations = ['Ensino Fundamental', 'Ensino Médio', 'Educação Profissional', 'Ensino Superior', 'Livre']
+    const modalities = ['Equipe', 'Individual']
+    const thematics = ['Tecnologia', 'Empreendorismo', 'Saúde']
 
     return (
         <>
@@ -22,11 +24,11 @@ export function SearchOptions() {
                 Escolaridade
             </DropdownButton>
 
-            <DropdownButton items={educations}>
+            <DropdownButton items={modalities}>
                 Tipo
             </DropdownButton>
 
-            <DropdownButton items={educations}>
+            <DropdownButton items={thematics}>
                 Tema
             </DropdownButton>
 

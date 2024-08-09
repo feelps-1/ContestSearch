@@ -21,13 +21,13 @@ export function DropdownButton({children, items, ...props}: DropdownButtonProps)
     };
     
     return (
-        <div className="bg-slate-200 rounded-xl h-11 px-4 gap-3 flex justify-between items-center w-1/4 relative">
+        <div className="bg-slate-200 rounded-xl h-11 px-4 flex justify-evenly items-center w-1/4 relative">
                 <button {...props} onClick={() => toggleDropdown('education')} className="text-slate-600 text-sm font-semibold flex justify-between flex-1">
                     {children}
                     <ChevronDown></ChevronDown>
                 </button>
                 {isDropdownOpen.education && (
-                    <div className="bg-slate-200 shadow-md rounded mt-2 p-2 flex flex-col absolute left-0 top-full">
+                    <div className="bg-slate-200 shadow-md rounded mt-2 p-2 flex flex-col absolute top-full w-11/12">
                         {items.map((item, index) => (
                             <div className="gap-1">
                             <label className="text-sm text-slate-600 gap-1">
