@@ -29,7 +29,7 @@ export function DropdownButton({children, items, ...props}: DropdownButtonProps)
                 {isDropdownOpen.education && (
                     <div className="bg-slate-200 shadow-md rounded mt-2 p-2 flex flex-col absolute top-full w-11/12">
                         {items.map((item, index) => (
-                            <div className="gap-1">
+                            <div key={index} className="gap-1">
                             <label className="text-sm text-slate-600 gap-1">
                                 <input type="checkbox" />
                                 <span>{item}</span>
