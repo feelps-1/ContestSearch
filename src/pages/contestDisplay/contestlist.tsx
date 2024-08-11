@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { api } from "../../libs/axios";
 
 interface Contest {
-    id: number;
-    name: string;
-    description: string;
-    icon: string;
-    modality: string;
-    tematic: string;
-    education: string;
+    ID: number;
+    Name: string;
+    Description: string;
+    Icon: string;
+    Type: string;
+    Tematic: string;
+    Education: string;
 }
 
 export function ContestList() {
@@ -27,12 +27,12 @@ export function ContestList() {
                 {contests.map((contest, index) => (
                     <ContestCard 
                         key={index}
-                        name={contest.name} 
-                        icon={contest.icon}
-                        description={contest.description}
-                        education={contest.education}
-                        modality={contest.modality}
-                        tematic={contest.tematic}
+                        name={contest.Name} 
+                        icon={contest.Icon}
+                        description={contest.Description}
+                        education={contest.Education}
+                        modality={contest.Type}
+                        tematic={contest.Tematic}
                     />
                 ))}
             </div>

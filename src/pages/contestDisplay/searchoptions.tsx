@@ -33,7 +33,7 @@ export function SearchOptions() {
             </DropdownButton>
 
             <div className="bg-orange-400 rounded-xl h-11 px-4 gap-3 flex justify-between items-center w-1/4">
-                <button className="text-slate-50 text-sm font-semibold flex justify-between flex-1">
+                <button className="text-slate-50 text-sm font-semibold flex justify-center flex-1">
                     Filtrar
                 </button>
             </div>
