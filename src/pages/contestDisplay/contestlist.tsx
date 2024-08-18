@@ -18,7 +18,7 @@ export function ContestList() {
     const [contests, setContests] = useState<Contest[]>([])
 
     useEffect(() => {
-        api.get(`/contests/`).then(response => setContests(response.data))
+        api.get(`/contest/`).then(response => setContests(response.data))
     }, [contestId])
 
     return (
