@@ -1,17 +1,19 @@
-interface ContestCardProps{
+interface ContestCardProps {
     name: string;
     description: string;
     icon: string;
     modality: string;
     tematic: string;
     education: string;
+    site: string;
 }
 
-export function ContestCard({name, description, icon, modality, tematic, education}: ContestCardProps) {
+export function ContestCard({name, description, icon, modality, tematic, education, site}: ContestCardProps) {
     return (
-        <div className="bg-slate-200 w-11/12 h-30 justify-between flex items-center p-3 rounded-xl gap-2">
-                <img src={icon} className="size-20 rounded-xl"></img>
-                <div className="flex flex-col">
+        <a href={site} target="_blank" rel="noopener noreferrer" className="w-11/12">
+            <div className="bg-slate-200 flex items-center p-5 rounded-xl gap-2 cursor-pointer hover:bg-slate-300">
+                <img src={icon} className="size-24 rounded-xl"></img>
+                <div className="flex flex-col w-96">
                     <p className="text-slate-600 font-bold text-xl">{name}</p>
                     <p className="text-slate-600 text-sm">{description}</p>
                 </div>
@@ -21,11 +23,7 @@ export function ContestCard({name, description, icon, modality, tematic, educati
                     <p className="text-slate-600 text-sm">Tipo: {modality}</p>
                     <p className="text-slate-600 text-sm">Tema: {tematic}</p>
                 </div>
-                <div className="bg-orange-400 rounded-xl h-11 px-4 gap-3 flex justify-between items-center w-32">
-                    <button className="text-slate-50 text-sm font-semibold flex justify-center flex-1">
-                        Visitar site
-                    </button>
-                </div>
             </div>
-    )
+        </a>
+    );
 }
