@@ -3,6 +3,7 @@ import { api } from '../../libs/axios';
 import { ContestCard } from '../../components/contextcard';
 import { DropdownButton } from '../../components/dropdownbutton';
 import { SearchBar } from '../../components/searchbar';
+import { useNavigate } from 'react-router-dom';
 
 interface Contest {
     id: string;
@@ -16,6 +17,12 @@ interface Contest {
 }
 
 export function ContestList() {
+    const navigate = useNavigate()
+
+    function indicateContest() {
+        navigate(`/indicar`)
+    }
+
     const [contests, setContests] = useState<Contest[]>([]);
 
     useEffect(() => {
@@ -54,7 +61,10 @@ export function ContestList() {
 
     return (
         
-        <><SearchBar keyword={search} inputHandler={handleInputChange} /><div className="flex items-center justify-evenly w-6/12 gap-3">
+        <>
+    <div className='flex flex-col w-full justify-center gap-3 items-center'>
+        <SearchBar keyword={search} inputHandler={handleInputChange} />
+        <div className="flex items-center justify-evenly w-6/12 gap-3">
             <DropdownButton items={educations}>
                 Escolaridade
             </DropdownButton>
@@ -73,7 +83,11 @@ export function ContestList() {
                 </button>
             </div>
 
-        </div><div className="flex flex-col w-8/12 items-center gap-3 justify-center">
+            </div>
+        </div>
+
+        <div className='w-4/6 h-px bg-slate-300' />
+        <div className="flex flex-col w-8/12 items-center gap-3 justify-center">
                 <div className="w-full h-[500px] overflow-y-auto flex items-center flex-col gap-3 custom-scrollbar">
                     {filteredContests.map((contest, index) => (
                         <ContestCard key={index}
@@ -86,6 +100,8 @@ export function ContestList() {
                             site={contest.site} />
                     ))}
                 </div>
-            </div></>
+                <a className='text-slate-600 cursor-pointer' onClick={indicateContest}>Não encontrou a competição que procurava?</a>            
+        </div>
+        <div className='w-4/6 h-px bg-slate-300' /></>
     );
 }
