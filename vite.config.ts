@@ -7,9 +7,9 @@ export default defineConfig(({  }) => {
     plugins: [
       nodePolyfills(),
       react()],
-    define: {
-      __APP_ENV__: process.env.VITE_VERCEL_ENV,
-    }
+    envDir: './buildConfig/environments',
+    base: process.env.PUBLIC_URL,
+    build: { outDir: process.env.BUILD_PATH },
   }
 
 })
