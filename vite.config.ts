@@ -6,7 +6,10 @@ export default defineConfig(({  }) => {
   return {
     plugins: [
       nodePolyfills(),
-      react()]
+      react()],
+    define: {
+      __APP_ENV__: process.env.VITE_VERCEL_ENV,
+    }
   }
 
 })
