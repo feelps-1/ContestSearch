@@ -103,6 +103,6 @@ export function ContestList() {
 
             </div>
             <div className='w-4/6 h-px bg-slate-300' /></>
-            <a className='text-slate-600 cursor-pointer' onClick={indicateContest}>Não encontrou a competição que procurava?</a></>  
+            <a className='text-slate-600 cursor-pointer underline hover:text-slate-800' onClick={indicateContest}>Não encontrou a competição que procurava?</a></>  
     );
 }
