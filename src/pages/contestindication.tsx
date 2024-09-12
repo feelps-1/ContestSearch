@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import { JWT } from 'google-auth-library';
-import credentials from '../credentials.json'
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ConfirmationModal } from '../components/confirmationmodal';
@@ -27,8 +26,8 @@ export function ContestIndication() {
     async function connectToApi(e: { preventDefault: () => void; }) {
     try{
         const serviceAccountAuth = new JWT({
-            email: credentials.client_email,
-            key: credentials.private_key,
+            email: process.env.client_email,
+            key: process.env.private_key,
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         })
             const idSheet = "1I6axzb2OsC2XRgudsin1X3XW5ALFzDghvDWQMAyBzig";
