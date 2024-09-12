@@ -27,8 +27,8 @@ export function ContestIndication() {
     async function connectToApi(e: { preventDefault: () => void; }) {
     try{
         const serviceAccountAuth = new JWT({
-            email: process.env.client_email,
-            key: process.env.private_key,
+            email: import.meta.env.client_email,
+            key: import.meta.env.private_key,
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         })
             const idSheet = "1I6axzb2OsC2XRgudsin1X3XW5ALFzDghvDWQMAyBzig";
