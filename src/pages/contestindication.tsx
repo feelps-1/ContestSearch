@@ -21,6 +21,7 @@ export function ContestIndication() {
         tematic,
         education,
         modality,
+        date
     }
 
     async function connectToApi(e: { preventDefault: () => void; }) {
