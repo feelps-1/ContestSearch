@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../libs/axios';
-import { ContestCard } from '../../components/contextcard';
+import { ContestCard } from '../../components/contestcard';
 import { DropdownButton } from '../../components/dropdownbutton';
 import { SearchBar } from '../../components/searchbar';
 import { useNavigate } from 'react-router-dom';
@@ -64,7 +64,7 @@ export function ContestList() {
         <><>
             <div className='flex flex-col w-full justify-center gap-3 items-center'>
                 <SearchBar keyword={search} inputHandler={handleInputChange} />
-                <div className="flex items-center justify-evenly w-6/12 gap-3">
+                <div className="flex items-center justify-evenly w-full md:w-6/12 gap-3">
                     <DropdownButton items={educations}>
                         Escolaridade
                     </DropdownButton>
@@ -87,8 +87,8 @@ export function ContestList() {
             </div>
 
             <div className='w-4/6 h-px bg-slate-300' />
-            <div className="flex flex-col w-8/12 items-center gap-3 justify-center">
-                <div className="w-full h-[500px] overflow-y-auto flex items-center flex-col gap-3 custom-scrollbar">
+            <div className="flex flex-col md:w-8/12 w-full items-center gap-3 justify-center">
+                <div className="w-11/12 md:w-full h-[500px] overflow-y-auto flex items-center flex-col gap-3 custom-scrollbar">
                     {filteredContests.map((contest, index) => (
                         <ContestCard key={index}
                             name={contest.name}

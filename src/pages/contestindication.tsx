@@ -27,24 +27,29 @@ export function ContestIndication() {
     async function connectToApi(e: { preventDefault: () => void; }) {
     try{
         const serviceAccountAuth = new JWT({
-            email: import.meta.env.client_email,
-            key: import.meta.env.private_key,
+            email: import.meta.env.VITE_CLIENT_EMAIL,
+            key: import.meta.env.VITE_PRIVATE_KEY,
             scopes: ['https://www.googleapis.com/auth/spreadsheets']
         })
-            const idSheet = "1I6axzb2OsC2XRgudsin1X3XW5ALFzDghvDWQMAyBzig";
+
+        const idSheet = "1I6axzb2OsC2XRgudsin1X3XW5ALFzDghvDWQMAyBzig";
+
+        console.log(serviceAccountAuth.email)
         
-            e.preventDefault();
-            const file = new GoogleSpreadsheet(idSheet, serviceAccountAuth);
-            await file.loadInfo();
-            const sheet = file.sheetsByIndex[0];
-            await sheet.addRow({
-                    name: `${data.name}`,
-                    description: `${data.description}`,
-                    site: `${data.site}`,
-                    tematic: `${data.tematic}`,
-                    education: `${data.education}`,
-                    modality:`${data.modality}`, 
-                    date: new Date(),})
+        console.log(serviceAccountAuth.key)
+    
+        e.preventDefault();
+        const file = new GoogleSpreadsheet(idSheet, serviceAccountAuth);
+        await file.loadInfo();
+        const sheet = file.sheetsByIndex[0];
+        await sheet.addRow({
+                name: `${data.name}`,
+                description: `${data.description}`,
+                site: `${data.site}`,
+                tematic: `${data.tematic}`,
+                education: `${data.education}`,
+                modality:`${data.modality}`, 
+                date: new Date(),})
     }catch(error){
         console.error("Error:", error); 
     }}
