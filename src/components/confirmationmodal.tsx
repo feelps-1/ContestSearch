@@ -1,13 +1,13 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 export function ConfirmationModal() {
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         window.location.reload();
-    //     }, 4000); 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            window.location.reload();
+        }, 4000); 
 
-    //     return () => clearTimeout(timer); 
-    // }, []);
+        return () => clearTimeout(timer); 
+    }, []);
     
     return (
 
