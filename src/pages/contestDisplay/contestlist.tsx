@@ -64,7 +64,7 @@ export function ContestList() {
         <><>
             <div className='flex flex-col w-full justify-center gap-3 items-center'>
                 <SearchBar keyword={search} inputHandler={handleInputChange} />
-                <div className="flex items-center justify-evenly w-full md:w-6/12 gap-3">
+                {/* <div className="flex items-center justify-evenly w-full md:w-6/12 gap-3">
                     <DropdownButton items={educations}>
                         Escolaridade
                     </DropdownButton>
@@ -83,7 +83,7 @@ export function ContestList() {
                         </button>
                     </div>
 
-                </div>
+                </div> */}
             </div>
 
             <div className='w-4/6 h-px bg-slate-300' />
