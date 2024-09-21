@@ -95,14 +95,15 @@ export function ContestIndication() {
 
     return (
         <>
-        <div className='w-full bg-orange-400 p-2 fixed'>
+        <div className='w-full bg-orange-400 p-2 relative gap-2'>
             <button onClick={backHome} className='flex-row flex text-slate-50 font-semibold items-center justify-center'>
                 <ArrowLeft></ArrowLeft>
                 Voltar
             </button>
         </div>
-        <div className="w-full flex justify-center items-center flex-1 h-screen flex-col">
-            <div className='bg-orange-400 text-slate-50 flex justify-center items-center flex-col rounded-xl gap-2 p-2'>
+
+        <div className="w-full flex justify-center items-center flex-1 flex-col">
+            <div className='bg-orange-400 text-slate-50 flex justify-center items-center flex-col rounded-xl gap-3 p-2 mt-3 md:w-1/2 w-11/12'>
             <h1 className='text-lg font-semibold'>Recomendação de competições</h1>
             <p>Não encontrou a competição que estava procurando ou quer ajudar a aumentar o acervo do site?
                 <br/>Por favor preencha esse formulário!
@@ -110,7 +111,7 @@ export function ContestIndication() {
             </div>
             <form className="flex flex-col justify-center items-center gap-3 p-2 w-full">
 
-                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-6/12">
+                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-full md:w-6/12">
                     <input
                         type="text"
                         placeholder="Nome da competição"
@@ -119,15 +120,15 @@ export function ContestIndication() {
                         required></input>
                 </div>
 
-                <div className='w-6/12 gap-3'>
-                    <textarea className="flex bg-slate-200 items-center rounded-xl h-28 px-4 gap-3 w-full placeholder-slate-600 text-sm text-slate-600"
+                <div className='w-full gap-3 md:w-6/12'>
+                    <textarea className="flex bg-slate-200 items-center rounded-xl md:h-28 h-20 px-4 gap-3 w-full placeholder-slate-600 text-sm text-slate-600"
                         placeholder="Dê uma breve descrição da competição"
                         onChange={(event) => setDescription(event.target.value)}
                         required>
                     </textarea>
                 </div>
 
-                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-6/12">
+                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-full md:w-6/12">
                     <input
                         type="text"
                         placeholder="Qual o link do site dessa competição?"
@@ -140,7 +141,7 @@ export function ContestIndication() {
                     <input className="w-full text-sm text-slate-600 rounded-xl cursor-pointer bg-slate-200" id="file_input" type="file" />
                 </div> */}
 
-                <div className='w-6/12'> 
+                <div className='w-full md:w-6/12'> 
                 <ul className="items-center w-full text-sm font-medium text-slate-600 bg-slate-200 border border-slate-200 rounded-xl sm:flex">
                     <li className='w-full border-b border-slate-200 sm:border-b-0 sm:border-r'>
                         <div className="flex items-center ps-3">
@@ -194,7 +195,7 @@ export function ContestIndication() {
                 </ul>
                 </div>
 
-                <div className='w-6/12'>
+                <div className='w-full md:w-6/12'>
                     
                 <ul className="items-center w-full text-sm font-medium text-slate-600 bg-slate-200 border border-slate-200 rounded-xl sm:flex">
                     <li className='w-full border-b border-slate-200 sm:border-b-0 sm:border-r'>
@@ -238,7 +239,7 @@ export function ContestIndication() {
                 </ul>
                 </div>
 
-                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-6/12">
+                <div className="flex bg-slate-200 items-center rounded-xl h-10 px-4 gap-3 w-full md:w-6/12">
                     <label className="text-sm text-slate-600">Modalidade:</label>
                     <select className="bg-transparent text-sm placeholder-slate-600 outline-none flex-1 cursor-pointer"
                         onChange={(event) => setModality(event.target.value)}>
