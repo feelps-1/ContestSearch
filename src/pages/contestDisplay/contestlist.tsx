@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../libs/axios';
 import { ContestCard } from '../../components/contestcard';
-import { DropdownButton } from '../../components/dropdownbutton';
 import { SearchBar } from '../../components/searchbar';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,9 +44,9 @@ export function ContestList() {
     const [filteredContests, setFilteredContests] = useState(contests)
     const [search, SetSearch] = useState('')
 
-    const educations = ['Ensino Fundamental', 'Ensino Médio', 'Educação Profissional', 'Ensino Superior', 'Livre']
-    const modalities = ['Equipe', 'Individual']
-    const thematics = ['Tecnologia', 'Empreendorismo', 'Saúde']
+    // const educations = ['Ensino Fundamental', 'Ensino Médio', 'Educação Profissional', 'Ensino Superior', 'Livre']
+    // const modalities = ['Equipe', 'Individual']
+    // const thematics = ['Tecnologia', 'Empreendorismo', 'Saúde']
 
     const handleInputChange = (e: { target: { value: any; }; }) => {
         const searchTerm = e.target.value;
