@@ -54,6 +54,7 @@ export function ContestIndication() {
         console.error("Error:", error); 
     }}
 
+    
     const handleTematic = (e: { target: { value: string; checked: boolean; }; }) => {
         const { value, checked } = e.target;
         
