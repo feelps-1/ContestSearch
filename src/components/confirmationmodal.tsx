@@ -4,7 +4,7 @@ export function ConfirmationModal() {
     useEffect(() => {
         const timer = setTimeout(() => {
             window.location.reload();
-        }, 3000); 
+        }, 4000); 
 
         return () => clearTimeout(timer); 
     }, []);
