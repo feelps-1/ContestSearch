@@ -33,10 +33,6 @@ export function ContestIndication() {
         })
 
         const idSheet = "1I6axzb2OsC2XRgudsin1X3XW5ALFzDghvDWQMAyBzig";
-
-        console.log(serviceAccountAuth.email)
-        
-        console.log(serviceAccountAuth.key)
     
         e.preventDefault();
         const file = new GoogleSpreadsheet(idSheet, serviceAccountAuth);
@@ -54,7 +50,7 @@ export function ContestIndication() {
         console.error("Error:", error); 
     }}
 
-    
+
     const handleTematic = (e: { target: { value: string; checked: boolean; }; }) => {
         const { value, checked } = e.target;
         
